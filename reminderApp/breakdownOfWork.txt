@@ -1,0 +1,13 @@
+November 8th(First Sprint Complete)
+
+James McEwen:
+
+I worked on the following tasks:
+
+1. Adding the update button: - This button is responsible for saving the changes made in the edit reminder page.
+2. Adding the delete button - This button adds functionality to delete reminders from the database.
+
+Additional time was spent on the following:
+
+1. Watching the in-depth videos on how the reminder app starter code was built.
+2. Watching the videos on authentication and researching passport.js

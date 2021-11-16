@@ -54,10 +54,8 @@ let remindersController = {
     });
 
     let index = database.cindy.reminders.indexOf(searchResult);
-    
-    console.log(database.cindy.reminders);
+  
     database.cindy.reminders[index] = reminder;
-    console.log(database.cindy.reminders);
     res.redirect("/reminders");
   },
 

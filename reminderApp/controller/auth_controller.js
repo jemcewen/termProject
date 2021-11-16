@@ -9,9 +9,14 @@ let authController = {
     res.render("auth/register");
   },
 
+  /*  I could not get this function to work here
   loginSubmit: (req, res) => {
-    // implement
+    passport.authenticate("local", {
+      successRedirect: "/reminders",
+      failureRedirect: "/login",
+    })
   },
+  */
 
   registerSubmit: (req, res) => {
     // implement

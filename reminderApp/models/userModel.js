@@ -1,3 +1,5 @@
+const reminderDatabase = require("../database");
+
 const database = [
     {
       id: 1,
@@ -32,8 +34,14 @@ const database = [
       if (user) {
         return user;
       }
-      throw new Error(`Couldn't find user with id: ${id}`);
+      return null;
     },
+    addGitHubUser: (user) => {
+      database.push(user);
+      reminderDatabase[user.id] = {
+        reminders: []
+      }
+    }
   };
   
   module.exports = { database, userModel };

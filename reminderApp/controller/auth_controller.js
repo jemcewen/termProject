@@ -1,4 +1,6 @@
 let database = require("../database");
+// url encoded?
+
 
 let authController = {
   login: (req, res) => {
@@ -9,17 +11,18 @@ let authController = {
     res.render("auth/register");
   },
 
-  /*  I could not get this function to work here
-  loginSubmit: (req, res) => {
-    passport.authenticate("local", {
-      successRedirect: "/reminders",
-      failureRedirect: "/login",
-    })
-  },
-  */
+  // not working as intended
+  // loginSubmit: (req, res) => {
+  //   passport.authenticate("local", {
+  //     successRedirect: "/reminders",
+  //     failureRedirect: "/login",
+  //   })
+  // },
+  
+
+
 
   registerSubmit: (req, res) => {
-    // implement
   },
 };
 

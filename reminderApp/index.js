@@ -52,15 +52,26 @@ app.post("/reminder/delete/:id", reminderController.delete);
 // Fix this to work with passport! The registration does not need to work, you can use the fake database for this.
 app.get("/register", authController.register);
 app.get("/login", forwardAuthenticated, authController.login);
-app.post("/register", authController.registerSubmit);
 
 // authController.loginSubmit is not working as intended
 //app.post("/login", authController.loginSubmit);
+
 app.post('/login', 
   passport.authenticate("local", {
     successRedirect: "/reminders",
     failureRedirect: "/login",
   })
+);
+
+app.get('/github',
+  passport.authenticate("github")
+);
+
+app.get('/github/callback',
+  passport.authenticate("github"),
+  function(req, res) {
+    res.redirect('/reminders');
+  }
 );
 
 app.listen(3001, function () {

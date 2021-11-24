@@ -1,0 +1,14 @@
+<div class="container">
+    <h1 class="page-header">Admin Dashboard</h1>
+    <h3>Welcome <%= name %></h3>
+    <p>Current Active Sessions:</p>
+
+    <% let keys = Object.keys(sessions) %>
+    <% keys.forEach(function(key) { %>
+        <p>
+            <strong>Session ID:</strong> <%= key %> 
+            <br>
+            <a href="/revoke/<%= key %>">Revoke Session</a>
+        </p>
+    <% }) %>
+</div> 

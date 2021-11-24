@@ -1,8 +1,5 @@
 November 8th
 ------------
-
-James McEwen:
-
 I worked on the following tasks:
 
 1. Adding the update button: - This button is responsible for saving the changes made in the edit reminder page.
@@ -15,9 +12,6 @@ Additional time was spent on the following:
 
 November 16th
 -------------
-
-James McEwen:
-
 I worked on the following tasks:
 1. Adding the local login strategy using passport.js.
 2. Added functionality to redirect non-authenticated users to the login page,
@@ -26,3 +20,11 @@ I worked on the following tasks:
 Additional time was spent on the following:
 
 1. Watching the video on the GitHub login strategy.
+
+November 23rd
+-------------
+I worked on the following tasks:
+1. GitHub login was implemented.
+2. Users can now only access the reminders list tied to their account. 
+3. Users were given a role of 'admin' or 'user'
+4. Admin users are able to access the /admin page to revoke sessions

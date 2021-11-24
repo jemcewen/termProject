@@ -1,3 +1,4 @@
+const { Store } = require("express-session");
 let database = require("../database");
 // url encoded?
 
@@ -19,7 +20,9 @@ let authController = {
   //   })
   // },
   
-
+  admin: (req, res) => {
+    res.render("auth/admin", { name: req.user.name });
+  },
 
 
   registerSubmit: (req, res) => {

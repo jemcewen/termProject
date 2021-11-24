@@ -32,7 +32,8 @@ const getUserByGitHubIdOrCreate = (profile) => {
     user = {
       id: profile.id,
       name: profile.name,
-      email: profile.email
+      email: profile.email,
+      role: 'user'
     }
   }
   userModel.addGitHubUser(user);

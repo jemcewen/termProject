@@ -4,7 +4,7 @@ const app = express();
 const path = require("path");
 const reminderController = require("./controller/reminder_controller");
 const authController = require("./controller/auth_controller");
-const { ensureAuthenticated, forwardAuthenticated} = require("./middleware/checkAuth");
+const { ensureAuthenticated, forwardAuthenticated, forwardAdmin} = require("./middleware/checkAuth");
 const passport = require("./middleware/passport");
 const session = require("express-session");
 
@@ -73,6 +73,19 @@ app.get('/github/callback',
     res.redirect('/reminders');
   }
 );
+
+app.get('/admin', forwardAdmin, function(req, res) {
+  let sessions = req.sessionStore.sessions;
+  res.render("auth/admin", { name: req.user.name, sessions: sessions});
+});
+
+// Destroys the session
+app.get('/revoke/:id', function(req, res) {
+  let toDestroy = req.params.id;
+  let store = req.sessionStore;
+  store.destroy(toDestroy);
+  res.redirect('/admin');
+})
 
 app.listen(3001, function () {
   console.log(
